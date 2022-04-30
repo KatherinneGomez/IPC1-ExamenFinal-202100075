@@ -38,4 +38,14 @@ public class BO {
         }
         
     }
+    
+    public static int getPeso(){
+        int peso=(int) Math.round(Math.random()*(400-120));
+        return peso;
+    }
+    
+    public static int getPLeche(){
+        int pLeche=(int) Math.round(Math.random()*(40-12));
+        return pLeche;
+    }
 }

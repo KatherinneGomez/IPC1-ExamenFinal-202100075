@@ -46,6 +46,21 @@ public class Inicio {
                         }
                         break;
                     case 3:
+                        int numVacas = IOC.inInteger("Indique el número de vacas en venta:");
+                        Vacas vacas = new Vacas(numVacas);
+                        for(int i=0;i<numVacas;i++){
+                            Vaca vaca = new Vaca(i,BO.getPeso(),BO.getPLeche());
+                            
+                            vacas.addVaca(vaca);
+                        }
+                        int pesoCamion = IOC.inInteger("Indique el peso que puede soportar el camión:");
+                        
+                        for(int j=0;j<numVacas;j++){
+                            String vaca1="id: "+vacas.getVaca(j).getIdVaca();
+                            vaca1=vaca1+", peso: "+vacas.getVaca(j).getPeso();
+                            vaca1=vaca1+", produccion: "+vacas.getVaca(j).getpLeche();
+                            IOC.outText(vaca1);
+                        }
                         break;
                     case 4:
                         salir=true;
@@ -64,7 +79,7 @@ public class Inicio {
         
         menu="1. Comparar Dos Números";
         menu=menu+"\n2. Pirámide de números Impares";
-        menu=menu+"\n3. ----";
+        menu=menu+"\n3. Vacas";
         menu=menu+"\n4. Salir";
         
         while(!correcto){
