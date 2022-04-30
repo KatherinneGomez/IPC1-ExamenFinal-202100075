@@ -18,12 +18,19 @@ public class Inicio {
     public static void main(String[] args) {
         byte opcion = 0;
         boolean salir=false;
+        BO bo = new BO();
         
         while(!salir){
             try{
                 opcion=getOpcionMenu();
                 switch(opcion){
                     case 1:
+                        IOC.outText("-------Ejercicio 1-------");
+                        int a = IOC.inInteger("Ingrese el primer número:");
+                        int b = IOC.inInteger("Ingrese el segundo número:");
+                        int elMayor = bo.elMayor(a,b);
+                        
+                        IOC.outText("El mayor de los dos números es: "+elMayor);
                         break;
                     case 2:
                         break;
@@ -44,7 +51,7 @@ public class Inicio {
         byte opcion=0;
         boolean correcto=false;
         
-        menu="1. ----";
+        menu="1. Comparar Dos Números";
         menu=menu+"\n2. ----";
         menu=menu+"\n3. ----";
         menu=menu+"\n4. Salir";
