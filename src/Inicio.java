@@ -18,7 +18,6 @@ public class Inicio {
     public static void main(String[] args) {
         byte opcion = 0;
         boolean salir=false;
-        BO bo = new BO();
         
         while(!salir){
             try{
@@ -28,11 +27,23 @@ public class Inicio {
                         IOC.outText("-------Ejercicio 1-------");
                         int a = IOC.inInteger("Ingrese el primer número:");
                         int b = IOC.inInteger("Ingrese el segundo número:");
-                        int elMayor = bo.elMayor(a,b);
+                        int elMayor = BO.elMayor(a,b);
                         
                         IOC.outText("El mayor de los dos números es: "+elMayor);
                         break;
                     case 2:
+                        boolean correcto = false;
+                        while(!correcto){
+                            IOC.outText("-------Ejercicio 2-------");
+                            int num = IOC.inInteger("Ingrese un número impar:");
+                            if(num%2!=0){
+                                BO.piramide(num);
+                                correcto=true;
+                            }else{
+                                IOC.outText("Número ingresado inválido");
+                                correcto=false;
+                            }
+                        }
                         break;
                     case 3:
                         break;
@@ -52,7 +63,7 @@ public class Inicio {
         boolean correcto=false;
         
         menu="1. Comparar Dos Números";
-        menu=menu+"\n2. ----";
+        menu=menu+"\n2. Pirámide de números Impares";
         menu=menu+"\n3. ----";
         menu=menu+"\n4. Salir";
         
